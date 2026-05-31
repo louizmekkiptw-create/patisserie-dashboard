@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Pâtisserie</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="dash">
+  <div class="topbar">
+    <div>
+      <h1>Dashboard Pâtisserie</h1>
+      <div class="date" id="today-date"></div>
+    </div>
+    <button onclick="loadOrders()" class="btn-refresh"><i>↻</i> Actualiser</button>
+  </div>
+
+  <div class="stats" id="stats-grid">
+    <div class="stat"><div class="stat-label">Aujourd'hui</div><div class="stat-val coral" id="s-today">—</div></div>
+    <div class="stat"><div class="stat-label">Cette semaine</div><div class="stat-val" id="s-week">—</div></div>
+    <div class="stat"><div class="stat-label">En cours</div><div class="stat-val" id="s-encours">—</div></div>
+    <div class="stat"><div class="stat-label">CA semaine</div><div class="stat-val" id="s-ca">—</div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">⚠ Alertes</div>
+    <div id="alerts-list"><div class="loading">Chargement...</div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📅 Commandes du jour</div>
+    <div id="today-list"><div class="loading">Chargement...</div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📋 Toutes les commandes</div>
+    <div id="all-list"><div class="loading">Chargement...</div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📊 Statistiques</div>
+    <div class="charts-grid">
+      <div class="chart-wrap">
+        <div class="chart-title">Commandes par produit</div>
+        <div class="legend" id="leg1"></div>
+        <div style="position:relative;height:180px"><canvas id="chart1"></canvas></div>
+      </div>
+      <div class="chart-wrap">
+        <div class="chart-title">Statut des commandes</div>
+        <div class="legend" id="leg2"></div>
+        <div style="position:relative;height:180px"><canvas id="chart2"></canvas></div>
+      </div>
+    </div>
+    <div class="chart-wrap" style="margin-top:10px">
+      <div class="chart-title">Commandes par jour cette semaine</div>
+      <div style="position:relative;height:160px"><canvas id="chart3"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
